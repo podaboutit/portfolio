@@ -212,3 +212,39 @@ footer {
 }
 
 .email-link { color: #fff; text-decoration: none; font-size: 1.2rem; }
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Wraps to next line on mobile */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.skill-card {
+    background: var(--card-bg); /* Matches your dark theme */
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 120px;
+    transition: transform 0.2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: #2a2a2a; /* Slightly lighter on hover */
+}
+
+.skill-card i {
+    font-size: 2.5rem; /* Icon size */
+    color: var(--accent); /* Purple color */
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #fff;
+}
