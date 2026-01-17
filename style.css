@@ -38,7 +38,7 @@ header {
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -50,15 +50,20 @@ header {
     max-width: 500px;
 }
 
-/* Image Styling */
-.hero-image img {
-    width: 100%;
+.hero-image {
+    width: 200px; /* Or your desired size */
+    height: 200px; /* Make sure this is the same as the width */
     border-radius: 50%;
+    overflow: hidden; /* This is crucial for the circular shape */
     border: 4px solid var(--accent);
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    
-    /* This makes the movement smooth (0.3 seconds long) */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will clip the image to fit the circle */
 }
 
 /* This is the animation state */
@@ -243,8 +248,460 @@ footer {
 }
 
 .skill-card p {
+
     margin: 0;
+
     font-weight: bold;
+
     font-size: 0.9rem;
+
     color: #fff;
+
+}
+
+
+
+/* Show Grids */
+
+.show-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    gap: 20px;
+
+    justify-content: center;
+
+}
+
+
+
+.show-card {
+
+    background: var(--card-bg);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: var(--text-main);
+
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 1 / 1; /* Makes it a square */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+.show-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+
+}
+
+
+
+.show-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: opacity 0.3s ease;
+
+}
+
+
+
+.show-card:hover img {
+
+    opacity: 0.3;
+
+}
+
+
+
+.show-title {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    padding: 10px;
+
+    background: rgba(0,0,0,0.7);
+
+    text-align: center;
+
+    font-weight: bold;
+
+    opacity: 0;
+
+    transform: translateY(100%);
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+}
+
+
+
+.show-card:hover .show-title {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 30px auto 0 auto;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact-form button {
+    width: fit-content;
+    align-self: flex-end;
+    cursor: pointer;
+}
+footer#contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* --- BOUTIQUE SERVICES STYLES --- */
+
+/* Value Prop Icons */
+.value-props-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.prop-item {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.prop-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.prop-item i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+/* Package Comparison Grid */
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.package-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Highlight the Video Package */
+.featured-package {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(187, 134, 252, 0.1);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--accent);
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.package-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.package-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.package-sub {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.feature-list i {
+    color: var(--accent);
+}
+
+/* Roadmap Timeline */
+.timeline {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    background: var(--card-bg);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+    opacity: 0.5;
+    line-height: 1;
+}
+
+.step-content h3 {
+    margin-top: 0;
+}
+
+/* Intake Form Specifics */
+.intake-form {
+    max-width: 700px; /* Wider for the complex form */
+}
+
+.form-select-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-select-group label {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-size: 1rem;
+    appearance: none; /* Removes default arrow */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23BB86FC%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    padding: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Mobile adjustments for Timeline */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* --- PRICING PAGE STYLES --- */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.price-card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The Highlight/Active Card */
+.price-card.highlight {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(187, 134, 252, 0.05);
+}
+
+.popular-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--accent);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-transform: uppercase;
+}
+
+.card-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-header h3 {
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Math Breakdown Section */
+.cost-breakdown {
+    margin-bottom: 15px;
+}
+
+.cost-breakdown .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.cost-breakdown strong {
+    color: #fff;
+}
+
+.math-box {
+    background: #252525;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.math-box.active-math {
+    background: rgba(187, 134, 252, 0.1);
+    border-color: var(--accent);
+}
+
+.math-box small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.total-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sub-text {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.small-list li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
 }
