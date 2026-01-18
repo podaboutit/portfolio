@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #121212; /* Your site background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .logo-wrapper {
+    font-size: 4rem; /* Made large for the preview */
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 15px;
+    align-items: baseline;
+    letter-spacing: -1px;
+  }
+
+  /* "POD" - Bold Purple */
+  .logo-pod {
+    color: #BB86FC;
+    font-weight: 900;
+  }
+
+  /* "ABOUT" - Thin White */
+  .logo-about {
+    color: #e0e0e0;
+    font-weight: 300;
+  }
+
+  /* "IT" - Bold Teal with digital dashed underline */
+  .logo-it {
+    color: #03DAC6;
+    position: relative;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the underline */
+  }
+
+  /* The dashed line effect */
+  .logo-it::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 6px; 
+    margin-top: 5px;
+    background: repeating-linear-gradient(
+        to right,
+        #03DAC6,
+        #03DAC6 4px,
+        transparent 4px,
+        transparent 8px
+    );
+    opacity: 0.8;
+  }
+</style>
+</head>
+<body>
+
+  <div class="logo-wrapper">
+    <span class="logo-pod">POD</span>
+    <span class="logo-about">ABOUT</span>
+    <span class="logo-it">IT</span>
+  </div>
+
+</body>
+</html>
