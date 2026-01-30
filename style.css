@@ -406,7 +406,7 @@ footer {
 
 .contact-form button {
     width: fit-content;
-    align-self: flex-end;
+    align-self: center;
     cursor: pointer;
 }
 footer#contact {
@@ -578,7 +578,6 @@ select {
 }
 
 .btn-full {
-    width: 100%;
     margin-top: 10px;
     font-size: 1.1rem;
     padding: 15px;
