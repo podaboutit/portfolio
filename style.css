@@ -236,34 +236,62 @@ footer {
 }
 
 .skill-card {
-    background: var(--card-bg); /* Matches your dark theme */
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
     min-width: 120px;
     transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    background: #2a2a2a; /* Slightly lighter on hover */
+    background: #2a2a2a;
 }
 
 .skill-card i {
-    font-size: 2.5rem; /* Icon size */
-    color: var(--accent); /* Purple color */
+    font-size: 2.5rem;
+    color: var(--accent);
     margin-bottom: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .skill-card p {
-
     margin: 0;
-
     font-weight: bold;
-
     font-size: 0.9rem;
-
     color: #fff;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
+.skill-detail {
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    color: #000;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.skill-card:hover i,
+.skill-card:hover p {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+.skill-card:hover .skill-detail {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 
